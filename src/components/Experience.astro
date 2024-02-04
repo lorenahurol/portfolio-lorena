@@ -1,0 +1,28 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "March 2023 - Present (Part-time, remote)",
+    title: "UX/UI Designer | University of Glasgow",
+    description:
+      "I center my approach on the user to create effective and accessible interfaces for the best experience. I am proficient in wireframing and prototyping design solutions utilizing Adobe XD and Figma. My skills extend to WordPress development and website maintenance, as well as pair programming with my team in front-end development sessions, using Material UI on React.js. Moreover, I conduct testing sessions to gather user feedback for continuous design improvement.",
+  },
+  {
+    date: "October 2017 - Present (Part-time, remote)",
+    title: "Video Editor | Media Monty",
+    description:
+      "Crafting visually engaging content by editing videos, integrating motion graphics, and ensuring a polished and professional look to meet project objectives. I am proficient in using video editing software such as Adobe Premiere Pro to assemble content for businesses, social media and Youtube. Skilled in creating visually appealing motion graphics, animations, and visual effects using tools like Adobe After Effects.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

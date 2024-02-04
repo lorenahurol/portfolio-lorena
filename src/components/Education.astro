@@ -1,0 +1,36 @@
+---
+import EducationItem from "./EducationItem.astro";
+
+const EDUCATION = [
+  {
+    degree: "Master's degree in Full Stack Development",
+    university: "Universidad Internacional de La Rioja (Distance learning)",
+    date: "October 2023 - Present",
+  },
+  {
+    degree: "CodeSpace: Software Development Bootcamp",
+    university: "Edinburgh College (Scotland)",
+    date: "September 2023 - November 2023",
+  },
+  {
+    degree: "BSc in Digital Design",
+    university: "Glasgow Caledonian University (Scotland)",
+    date: "August 2020 - June 2023",
+  },
+  {
+    degree: "BA (Hons) in Audiovisual Communication",
+    university: "Universidad Politécnica de Valencia (Spain)",
+    date: "September 2012 - September 2016",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EDUCATION.map((education) => (
+      <li class="mb-10 ms-4">
+        <EducationItem {...education} />
+      </li>
+    ))
+  }
+</ol>

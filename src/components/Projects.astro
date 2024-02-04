@@ -1,0 +1,111 @@
+---
+import Link from "./Icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import GitHubIcon from "./Icons/GitHubIcon.astro";
+
+const PROJECTS = [
+  {
+    title: "Edge Apparel Inc. | E-commerce Website",
+    description:
+      "Edge Apparel is a full-stack prototype of a street-style clothing online store. It was developed as a final project for CodeSpace's Software Development Bootcamp.",
+    link: "",
+    github: "https://github.com/lorenahurol/Edge-Apparel-Inc",
+    image: "/projects/edgeapparel.webp",
+    tags: ["PHP", "Bootstrap", "MySQL", "JavaScript"],
+  },
+  {
+    title: "Maryam Moliner | Photographer Portfolio",
+    description:
+      "Responsive portfolio website for a wildlife photographer. The front-end of this site was carefully designed and developed to showcase the artist's work and passion for wildlife.",
+    link: "https://maryam-photographer.netlify.app/",
+    github:
+      "https://github.com/lorenahurol/wildlife-photographer-portfolio/tree/main/LHO-Wildlife-Photography-Website",
+    image: "/projects/maryammoliner.webp",
+    tags: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    title: "A Good Shop | Responsive static UI MockUp",
+    description:
+      "Crafted a sleek and responsive e-commerce phone store interface using HTML and CSS, translating the initial design into an engaging and user-friendly digital storefront",
+    link: "https://agoodshop-mockup.netlify.app/",
+    github: "https://github.com/lorenahurol/aGoodShop",
+    image: "/projects/agoodshop.png",
+    tags: ["HTML", "CSS", "Responsive"],
+  },
+  {
+    title: "A Good Shop | OOP Vanilla JS Shopping Cart",
+    description:
+      "Created a dynamic shopping cart entirely using vanilla JavaScript, applying object-oriented programming for a modular and scalable solution.",
+    link: "https://agoodshop-cart.netlify.app/",
+    github: "https://github.com/lorenahurol/Actividad-4",
+    image: "/projects/cart.png",
+    tags: ["HTML", "CSS", "JavaScript", "OOP"],
+  },
+  {
+    title: "SICSA Conference 2023 | Wordpress Website",
+    description:
+      "SICSA PhD's 2023 conference website, was designed and developed using WordPress and Elementor, ensuring a visually appealing and user-friendly platform on pair with the conference theme. ",
+    link: "https://sicsaconf.org/",
+    github: "",
+    image: "/projects/sicsa.webp",
+    tags: ["Wordpress", "Elementor", "Design"],
+  },
+  {
+    title: "BBC Gamepulse | UX/UI design",
+    description:
+      "University Project. Crafted an innovative UX/UI solution for the BBC's new gaming news platform targeted to Gen-Z users, to be integrated into their broader entertainment suite.",
+    link: "https://www.figma.com/file/jxskoLNgjfoupdYQCaBy62/BBC-Gamepulse---Prototype-Final?type=design&node-id=0%3A1&mode=design&t=LCKrBRRK5XQnRT2z-1",
+    github: "",
+    image: "/projects/bbc.webp",
+    tags: ["Figma", "UX/UI", "Design"],
+  },
+  {
+    title: "RIS Matchmaker | UX/UI design",
+    description:
+      "Designed the user experience and interface for the Research Innovation Scotland Matchmaker App using Figma, integrating a thoughtful approach to enhance connectivity among researchers across Scottish and German universities.",
+    link: "https://www.figma.com/file/hz7IyPs3rUbes6SANyw5GG/RIS%3A-Match-Maker-%26-Coffee-Breaks?type=design&node-id=0%3A1&mode=design&t=90sFYoJCVfPetQtQ-1",
+    github: "",
+    image: "/projects/ris.webp",
+    tags: ["Figma", "UX/UI", "Design"],
+  },
+];
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-y-12 gap-x-12">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+      <>
+        <article>
+          <h4 class="text-xl font-semibold text-violet-500 mb-5">{title}</h4>
+          <p class="text-lg mb-4 text-pretty">{description}</p>
+          <ul class="flex gap-x-4 flex-row">
+            {tags.map((tag) => (
+              <li class="flex gap-x-2 text-md font-semibold mb-3">{tag}</li>
+            ))}
+          </ul>
+          <img
+            alt="Screenshot of the project"
+            class="rounded shadow-2xl transition-transform duration-500 ease-in-out transform hover:scale-105"
+            loading="lazy"
+            src={image}
+          />
+
+          <footer class="flex items-end justify-start mt-4 gap-x-4">
+            {github && (
+              <LinkButton href={github}>
+                <GitHubIcon class="size-6" />
+                Code
+              </LinkButton>
+            )}
+            {link && (
+              <LinkButton href={link}>
+                <Link class="size-4" />
+                Preview
+              </LinkButton>
+            )}
+          </footer>
+        </article>
+      </>
+    ))
+  }
+</div>
